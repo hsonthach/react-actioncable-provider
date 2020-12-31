@@ -1,1 +1,9 @@
+[esm]
+edge >= 16
+firefox >= 60
+chrome >= 61
+safari >= 11
+opera >= 48
+
+[legacy]
 defaults

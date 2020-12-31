@@ -3,10 +3,14 @@
   "version": "3.0.3",
   "description": "ActionCable Provider for React",
   "main": "dist/index.js",
+  "exports": {
+    "import": "./dist/modern/index.js"
+  },
   "scripts": {
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "build": "babel lib/index.js --out-dir dist"
+    "build": "BROWSERSLIST_ENV='legacy' babel lib/index.js --out-dir dist/",
+    "build:esm": "BROWSERSLIST_ENV='esm' babel lib/index.js --out-dir dist/esm"
   },
   "repository": {
     "type": "git",
@@ -19,7 +23,8 @@
     "WebSockets"
   ],
   "files": [
-    "dist/index.js"
+    "dist/index.js",
+    "dist/modern/index.js"
   ],
   "author": "Li Jie <cpunion@gmail.com>",
   "contributors": [
