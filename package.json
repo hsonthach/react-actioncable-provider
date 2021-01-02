@@ -10,7 +10,9 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "build": "BROWSERSLIST_ENV='legacy' babel lib/index.js --out-dir dist/",
-    "build:esm": "BROWSERSLIST_ENV='esm' babel lib/index.js --out-dir dist/esm"
+    "build:esm": "BROWSERSLIST_ENV='esm' babel lib/index.js --out-dir dist/esm",
+    "build:webpack:esm": "webpack --config webpack.config.js",
+    "build:webpack:legacy": "webpack --config legacy.config.js"
   },
   "repository": {
     "type": "git",
@@ -48,12 +50,15 @@
     "@babel/preset-react": "^7.7.4",
     "@skypack/package-check": "^0.2.2",
     "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.2",
     "chai": "^4.1.2",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "jest": "^26.6.3",
     "react-dom": "^16.9.0",
-    "react-test-renderer": "^16.9.0"
+    "react-test-renderer": "^16.9.0",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1"
   },
   "jest": {
     "verbose": true,
